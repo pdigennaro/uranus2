@@ -1,0 +1,240 @@
+<html>
+    <head>
+        <title>MapViewer</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+        <link href="https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdn.rawgit.com/iconic/open-iconic/master/font/css/open-iconic-bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/xolonium" type="text/css"/>
+
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <script type="text/javascript" src="Leaflet.Icon.Glyph.js"></script>
+        
+        <style>
+            #map { height: 100%; }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <script>
+            // https://leaflet.github.io/Leaflet.Icon.Glyph/demo.html
+            var map = L.map('map').setView([51.518434, 5.859419], 13);
+            var poly1 = [];
+            var poly2 = [];
+            var poly3 = [];
+            var poly4 = [];
+
+            var polylines = [];
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+			var iconCircle = L.icon({
+                iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons/radar-red.png',
+                iconSize: [24, 24],
+            });
+
+            var iconSquare = L.icon({
+                iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons/radar-purple.png',
+                iconSize: [24, 24],
+            });
+
+            var iconTriangle = L.icon({
+                iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons/radar-blue.png',
+                iconSize: [24, 24],
+            });
+
+            var iconCross = L.icon({
+                iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons//radar-gray.png',
+                iconSize: [24, 24],
+            });
+
+            L.marker([51.519137, 5.857951], {icon: iconCircle}).addTo(map); // diana
+            L.marker([51.52147, 5.87056833], {icon: iconSquare}).addTo(map); // arcus
+            L.marker([51.5192716, 5.8579155], {icon: iconTriangle}).addTo(map); // venus
+            L.marker([51.52126391, 5.85862734], {icon: iconCross}).addTo(map); // alvira
+
+            function addSinglePoint(lat, lon, title, type, color)
+            {
+                const zooMarkerPopup = L.popup().setContent(title);
+                L.marker([lat,lon], {title: title, icon: L.icon.glyph({ prefix: 'mdi', glyph: type, glyphColor: 'red'}) }).bindPopup(zooMarkerPopup).addTo(map);
+            }
+
+            function addToPoly1(c1, c2)
+            {
+                poly1.push([c1, c2]);
+            }
+
+            function showPoly1()
+            {
+                var newPolyline = new L.Polyline(poly1, {
+                    color: 'red',
+                    weight: 2,
+                    opacity: 0.5,
+                    smoothFactor: 1
+                }).addTo(map);
+
+                polylines.push(newPolyline);
+            }
+
+            function addToPoly2(c1, c2)
+            {
+                poly2.push([c1, c2]);
+            }
+
+            function showPoly2()
+            {
+                var newPolyline = new L.Polyline(poly2, {
+                    color: 'green',
+                    weight: 2,
+                    opacity: 0.5,
+                    smoothFactor: 1
+                }).addTo(map);
+
+                polylines.push(newPolyline);
+            }
+
+            function addToPoly3(c1, c2)
+            {
+                poly3.push([c1, c2]);
+            }
+
+            function showPoly3()
+            {
+                var newPolyline = new L.Polyline(poly3, {
+                    color: 'blue',
+                    weight: 2,
+                    opacity: 0.5,
+                    smoothFactor: 1
+                }).addTo(map);
+
+                polylines.push(newPolyline);
+            }
+
+            function addToPoly4(c1, c2)
+            {
+                poly4.push([c1, c2]);
+            }
+
+            function showPoly4()
+            {
+                var newPolyline = new L.Polyline(poly4, {
+                    color: 'yellow',
+                    weight: 2,
+                    opacity: 0.5,
+                    smoothFactor: 1
+                }).addTo(map);
+
+                polylines.push(newPolyline);
+            }
+
+            function clearPolys()
+            {
+                polylines.forEach(function (item) {
+                    map.removeLayer(item)
+                });
+            }
+
+            var realDronesColor = "#3388ff";
+            var forecastedColor = "#8C2426";
+            var mark = L.layerGroup();
+
+            function addLayerGroup()
+            {
+               map.addLayer(mark);
+            }
+
+            function addRealDronesPoints(c1, c2, c3, c4)
+            {
+               console.log("add coordinates: " + c1 + ", " + c2 + ", " + c3 + ", " + c4);
+
+                var drone1 = L.icon({
+                    iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons/drone-green.png',
+                    iconSize: [24, 24],
+                });
+
+                var mar1 = L.marker([c1,c2], {icon: drone1});
+                mark.addLayer(mar1);
+
+                if(c3 != null)
+                {
+                    var drone2 = L.icon({
+                       iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons/drone-green.png',
+                       iconSize: [24, 24],
+                    });
+
+                    var mar2 = L.marker([c3,c4], {icon: drone2});
+                    mark.addLayer(mar2);
+                }
+            }
+
+            function clearPoints()
+            {
+                if (map.hasLayer(mark)){
+                    //map.removeLayer(mark);
+                    mark.clearLayers();
+                }
+            }
+
+            function addForecastedDronesPoints(c1, c2, c3, c4)
+            {
+            	console.log("add coordinates: " + c1 + ", " + c2 + ", " + c3 + ", " + c4);
+
+                var drone1 = L.icon({
+                       iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons/drone-orange.png',
+                       iconSize: [24, 24],
+                    });
+                var mar1 = L.marker([c1,c2], {icon: drone1});
+                mark.addLayer(mar1);
+
+                if(c3 != null)
+                {
+                    var drone2 = L.icon({
+                       iconUrl: 'https://github.com/pdigennaro/cdn/raw/main/uranus/icons/drone-yellow.png',
+                       iconSize: [24, 24],
+                    });
+                    var mar2 = L.marker([c3,c4], {icon: drone2});
+                    mark.addLayer(mar2);
+                }
+            }
+
+		    function addNewPoint(c1, c2, c3, c4) {
+		        console.log("add coordinates: " + c1 + ", " + c2 + ", " + c3 + ", " + c4);
+		        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+				var circle = L.circle([c1, c2], {
+                    color: "#" + randomColor,
+                    fillColor: "#" + randomColor,
+                    fillOpacity: 0.5,
+                    radius: 25
+                }).addTo(map);
+
+                var circle2 = L.circle([c3, c4], {
+                    color: "#" + randomColor,
+                    fillColor: "#" + randomColor,
+                    fillOpacity: 0.5,
+                    dashArray: "2,3",
+                    radius: 35
+                }).addTo(map);
+		    }
+				
+				
+			function helloWorld(param1, param2) {
+				console.log("Hello world " + param1 + " " + param2);
+
+				var circle = L.circle([51.508, -0.11], {
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: 50
+                }).addTo(map);
+			}
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,174 @@
+Starting epoch 1
+TRAIN Loss after epoch     1: 18.350
+VALIDATION Loss after epoch     1: 6.046
+Starting epoch 2
+TRAIN Loss after epoch     2: 3.816
+VALIDATION Loss after epoch     2: 0.886
+Starting epoch 3
+TRAIN Loss after epoch     3: 1.695
+VALIDATION Loss after epoch     3: 1.000
+Starting epoch 4
+TRAIN Loss after epoch     4: 0.930
+VALIDATION Loss after epoch     4: 0.427
+Starting epoch 5
+TRAIN Loss after epoch     5: 0.705
+VALIDATION Loss after epoch     5: 0.279
+Starting epoch 6
+TRAIN Loss after epoch     6: 0.511
+VALIDATION Loss after epoch     6: 0.368
+Starting epoch 7
+TRAIN Loss after epoch     7: 0.441
+VALIDATION Loss after epoch     7: 0.253
+Starting epoch 8
+TRAIN Loss after epoch     8: 0.279
+VALIDATION Loss after epoch     8: 0.320
+Starting epoch 9
+TRAIN Loss after epoch     9: 0.354
+VALIDATION Loss after epoch     9: 0.103
+Starting epoch 10
+TRAIN Loss after epoch    10: 0.334
+VALIDATION Loss after epoch    10: 0.163
+Starting epoch 11
+TRAIN Loss after epoch    11: 0.434
+VALIDATION Loss after epoch    11: 0.414
+Starting epoch 12
+TRAIN Loss after epoch    12: 0.373
+VALIDATION Loss after epoch    12: 0.124
+Starting epoch 13
+TRAIN Loss after epoch    13: 0.324
+VALIDATION Loss after epoch    13: 0.310
+Starting epoch 14
+TRAIN Loss after epoch    14: 0.280
+VALIDATION Loss after epoch    14: 0.137
+Starting epoch 15
+TRAIN Loss after epoch    15: 0.176
+VALIDATION Loss after epoch    15: 0.211
+Starting epoch 16
+TRAIN Loss after epoch    16: 0.230
+VALIDATION Loss after epoch    16: 0.185
+Starting epoch 17
+TRAIN Loss after epoch    17: 0.287
+VALIDATION Loss after epoch    17: 0.283
+Starting epoch 18
+TRAIN Loss after epoch    18: 0.191
+VALIDATION Loss after epoch    18: 0.120
+Starting epoch 19
+TRAIN Loss after epoch    19: 0.209
+VALIDATION Loss after epoch    19: 0.256
+Starting epoch 20
+TRAIN Loss after epoch    20: 0.240
+VALIDATION Loss after epoch    20: 0.120
+Starting epoch 21
+TRAIN Loss after epoch    21: 0.235
+VALIDATION Loss after epoch    21: 0.126
+Starting epoch 22
+TRAIN Loss after epoch    22: 0.209
+VALIDATION Loss after epoch    22: 0.245
+Starting epoch 23
+TRAIN Loss after epoch    23: 0.221
+VALIDATION Loss after epoch    23: 0.112
+Starting epoch 24
+TRAIN Loss after epoch    24: 0.179
+VALIDATION Loss after epoch    24: 0.350
+Starting epoch 25
+TRAIN Loss after epoch    25: 0.178
+VALIDATION Loss after epoch    25: 0.351
+Starting epoch 26
+TRAIN Loss after epoch    26: 0.211
+VALIDATION Loss after epoch    26: 0.323
+Starting epoch 27
+TRAIN Loss after epoch    27: 0.231
+VALIDATION Loss after epoch    27: 0.403
+Starting epoch 28
+TRAIN Loss after epoch    28: 0.213
+VALIDATION Loss after epoch    28: 0.175
+Starting epoch 29
+TRAIN Loss after epoch    29: 0.175
+VALIDATION Loss after epoch    29: 0.333
+Starting epoch 30
+TRAIN Loss after epoch    30: 0.124
+VALIDATION Loss after epoch    30: 0.251
+Starting epoch 31
+TRAIN Loss after epoch    31: 0.105
+VALIDATION Loss after epoch    31: 0.393
+Starting epoch 32
+TRAIN Loss after epoch    32: 0.154
+VALIDATION Loss after epoch    32: 0.501
+Starting epoch 33
+TRAIN Loss after epoch    33: 0.171
+VALIDATION Loss after epoch    33: 0.232
+Starting epoch 34
+TRAIN Loss after epoch    34: 0.251
+VALIDATION Loss after epoch    34: 0.391
+Starting epoch 35
+TRAIN Loss after epoch    35: 0.247
+VALIDATION Loss after epoch    35: 0.562
+Starting epoch 36
+TRAIN Loss after epoch    36: 0.201
+VALIDATION Loss after epoch    36: 0.306
+Starting epoch 37
+TRAIN Loss after epoch    37: 0.192
+VALIDATION Loss after epoch    37: 0.190
+Starting epoch 38
+TRAIN Loss after epoch    38: 0.189
+VALIDATION Loss after epoch    38: 0.241
+Starting epoch 39
+TRAIN Loss after epoch    39: 0.135
+VALIDATION Loss after epoch    39: 0.262
+Starting epoch 40
+TRAIN Loss after epoch    40: 0.124
+VALIDATION Loss after epoch    40: 0.409
+Starting epoch 41
+TRAIN Loss after epoch    41: 0.159
+VALIDATION Loss after epoch    41: 0.101
+Starting epoch 42
+TRAIN Loss after epoch    42: 0.184
+VALIDATION Loss after epoch    42: 0.406
+Starting epoch 43
+TRAIN Loss after epoch    43: 0.250
+VALIDATION Loss after epoch    43: 0.287
+Starting epoch 44
+TRAIN Loss after epoch    44: 0.215
+VALIDATION Loss after epoch    44: 0.157
+Starting epoch 45
+TRAIN Loss after epoch    45: 0.153
+VALIDATION Loss after epoch    45: 0.230
+Starting epoch 46
+TRAIN Loss after epoch    46: 0.101
+VALIDATION Loss after epoch    46: 0.265
+Starting epoch 47
+TRAIN Loss after epoch    47: 0.123
+VALIDATION Loss after epoch    47: 0.404
+Starting epoch 48
+TRAIN Loss after epoch    48: 0.153
+VALIDATION Loss after epoch    48: 0.340
+Starting epoch 49
+TRAIN Loss after epoch    49: 0.200
+VALIDATION Loss after epoch    49: 0.197
+Starting epoch 50
+TRAIN Loss after epoch    50: 0.183
+VALIDATION Loss after epoch    50: 0.131
+
+
+*** CONFUSION MATRIX ***
+[[1082    1    3    4    5    0    1]
+ [   0   19    2    1    0    0    4]
+ [   4    0  105    7    8    0    7]
+ [   2    5    8  137   24    2   10]
+ [  16    0   12   14  110    0    1]
+ [   0    0    1    4    0    7    0]
+ [   0    1    2    4    1    0    6]]
+--- CLASSIFICATION REPORTS ---
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98      1096
+           1       0.73      0.73      0.73        26
+           2       0.79      0.80      0.80       131
+           3       0.80      0.73      0.76       188
+           4       0.74      0.72      0.73       153
+           5       0.78      0.58      0.67        12
+           6       0.21      0.43      0.28        14
+
+    accuracy                           0.90      1620
+   macro avg       0.72      0.71      0.71      1620
+weighted avg       0.91      0.90      0.91      1620
