@@ -9,7 +9,7 @@ For the identification and classification tasks of a UAV, a MLP model is trained
 with MSE of 0.29, MAE of 0.04, R^2 of 0.93.
 
 <p align="center">
-  <img src="results/schemas/schema.png" width="50%" height="50%">
+  <img src="results/schemas/schema.PNG" width="80%" height="80%">
 </p>
 
 The libraries used by WaterS 2.0 are the following:
@@ -27,7 +27,7 @@ Screenshot
 
 This is a screenshot of the final application:
 <p align="center">
-  <img src="results/screens/demo-small.png" width="50%" height="50%">
+  <img src="results/screens/demo-small.PNG" width="50%" height="50%">
 </p>
 
 License
