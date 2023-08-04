@@ -12,7 +12,7 @@ with MSE of 0.29, MAE of 0.04, R^2 of 0.93.
   <img src="results/schemas/schema.PNG" width="80%" height="80%">
 </p>
 
-The libraries used by WaterS 2.0 are the following:
+The libraries used by URANUS are the following:
 
 | Plugin                | README                            |
 |-----------------------|-----------------------------------|
@@ -29,6 +29,17 @@ This is a screenshot of the final application:
 <p align="center">
   <img src="results/screens/demo-small.PNG" width="50%" height="50%">
 </p>
+
+Instructions
+------
+The proposed source files have been developed and tested with Ubuntu 22.04 LTS and Python 3.11 and we encourage to use a similar environment to run the scripts.
+
+Use the following commands to install the scripts' dependencies:
+
+```sh
+$ sudo apt-get install python3-pip python3-tk graphviz
+$ pip3 install -r requirements.txt
+```
 
 License
 ----
