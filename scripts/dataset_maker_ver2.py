@@ -1,9 +1,6 @@
 import csv
 from datetime import datetime, timezone
 
-# this version uses the TracksTracksTimestamp information
-# it's actually a really slower version...
-
 def readCSV(fileName):
     file = open(fileName, "r")
     data = list(csv.DictReader(file, delimiter=","))
